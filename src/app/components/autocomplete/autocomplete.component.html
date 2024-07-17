@@ -1,0 +1,29 @@
+<div class="autocomplete">
+  <label for="cocktail">Cocktail search</label>
+  <input
+    id="cocktail"
+    name="cocktail"
+    class="autocomplete-input"
+    type="text"
+    aria-autocomplete="list"
+    aria-controls="autocomplete-results"
+    attr.aria-activedescendant="autocomplete-option-{{ highlightedIndex }}"
+    [(ngModel)]="query"
+    (input)="onInput()"
+    (keydown)="onKeydown($event)"
+  />
+  <ul class="autocomplete-results" role="listbox" [hidden]="!options.length">
+    @for (option of options; track option.idDrink) {
+    <li
+      role="option"
+      id="autocomplete-option-{{ $index }}"
+      class="autocomplete-result"
+      (click)="selectOption(option)"
+      [class.highlighted]="$index === highlightedIndex"
+      [innerHTML]="option.strDrink | highlight : query"
+    >
+      {{ option.strDrink }}
+    </li>
+    }
+  </ul>
+</div>

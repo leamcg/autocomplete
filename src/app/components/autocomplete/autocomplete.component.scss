@@ -1,0 +1,43 @@
+.autocomplete {
+  position: relative;
+  width: 80vw;
+
+  label {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+
+  .autocomplete-input {
+    border: none;
+    width: 80vw;
+    height: 4rem;
+    font-size: 1.25rem;
+    padding: 0.5rem 2rem;
+    border-radius: 2rem;
+    box-sizing: border-box;
+  }
+
+  .autocomplete-results {
+    margin-top: 1rem;
+    padding: 0;
+    border-radius: 2rem;
+    position: absolute;
+    list-style-type: none;
+    width: 100%;
+    background-color: white;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .autocomplete-result {
+    padding: 1rem;
+    border-radius: 0;
+    cursor: pointer;
+
+    &.highlighted,
+    &:hover {
+      background-color: #f1ecea8c;
+    }
+  }
+}
